@@ -16,10 +16,14 @@ import com.excel.upload.repository.InvoiceRepository;
 import com.excel.upload.service.FileUploadService;
 import com.excel.upload.service.IExcelDataService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class InvoiceController {
 
 
+Logger log=LoggerFactory.getLogger("Invoice controller")
 	FileUploadService fileService;
 
 	IExcelDataService excelservice;
@@ -36,7 +40,7 @@ public class InvoiceController {
 
 	@GetMapping("/")
 	public String index() {
-		System.out.println("In Upload page");
+		log.info("index controller called");
 		return "uploadPage";
 	}
 
